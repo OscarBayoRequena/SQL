@@ -1112,7 +1112,7 @@ begin
     for registro1 in cursor1 loop
         
         for registro2 in cursor2 loop
-            if(registro1.dorsal := registro2.dorsal)then
+            if(registro1.dorsal = registro2.dorsal)then
                 update puerto set dorsal=null where CURRENT OF cursor1;
             end if;
         end loop;
